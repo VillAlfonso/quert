@@ -1,93 +1,73 @@
-# Hollow Knight Portfolio
+# Personal Portfolio
 
-A stunning Hollow Knight-themed parallax portfolio landing page for Quert Alfonso M. Villafuerte.
+A modern, atmospheric portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a dark aesthetic with custom SVG ornaments, parallax scrolling, and smooth animations.
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** CSS Keyframes + Intersection Observer API
+- **Deployment:** Vercel
 
 ## Features
 
-- 🎮 **Hollow Knight Aesthetic** - Dark atmospheric design with ornate Victorian/gothic flourishes
-- ✨ **Parallax Effects** - Multi-layered background with depth
-- 🔮 **Floating Particles** - Animated firefly-like particles
-- 🌿 **Decorative Vines** - SVG vine decorations framing the viewport
-- 💫 **Smooth Animations** - Fade-in on scroll, glowing text effects
-- 📱 **Fully Responsive** - Works on all device sizes
-- ⚡ **Next.js 14** - Built with App Router and TypeScript
-- 🎨 **Tailwind CSS** - Utility-first styling with custom theme
+- Custom SVG ornamental design system
+- Multi-layered parallax background
+- Floating particle animation system
+- Scroll-triggered fade-in animations
+- Responsive across all breakpoints
+- Optimized for Core Web Vitals
 
-## Quick Start
+## Getting Started
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
 ```
+
+Open [http://localhost:3000](http://localhost:3000)
 
 ## Project Structure
 
 ```
-hollow-portfolio/
 ├── app/
-│   ├── globals.css      # Global styles & Tailwind
-│   ├── layout.tsx       # Root layout with metadata
-│   └── page.tsx         # Main page component
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
 ├── components/
-│   ├── FadeIn.tsx           # Scroll-triggered fade animation
-│   ├── FloatingParticles.tsx # Animated particle effects
-│   ├── Navbar.tsx           # Fixed navigation
-│   ├── Ornament.tsx         # SVG decorative elements
-│   ├── ParallaxBackground.tsx # Layered background
-│   ├── ProjectCard.tsx      # Project display card
-│   ├── ProjectIcons.tsx     # Custom SVG icons
-│   ├── Sections.tsx         # All page sections
-│   ├── VineDecorations.tsx  # Side vine SVGs
-│   └── index.ts             # Export barrel
-├── tailwind.config.ts   # Tailwind + custom theme
-├── tsconfig.json        # TypeScript config
-└── package.json         # Dependencies
+│   ├── FadeIn.tsx
+│   ├── FloatingParticles.tsx
+│   ├── Navbar.tsx
+│   ├── Ornament.tsx
+│   ├── ParallaxBackground.tsx
+│   ├── ProfileFrame.tsx
+│   ├── ProjectCard.tsx
+│   ├── ProjectIcons.tsx
+│   ├── Sections.tsx
+│   └── VineDecorations.tsx
+├── public/
+│   └── profile.jpg
+├── tailwind.config.ts
+└── package.json
 ```
 
 ## Customization
 
-### Update Your Information
+Edit `components/Sections.tsx` to update content. Color palette can be modified in `tailwind.config.ts`.
 
-1. **Name & Title**: Edit `components/Sections.tsx` → `HeroSection`
-2. **About Text**: Edit `components/Sections.tsx` → `AboutSection`
-3. **Projects**: Edit the `projects` array in `components/Sections.tsx` → `ProjectsSection`
-4. **Contact Links**: Edit `components/Sections.tsx` → `ContactSection`
-5. **Metadata**: Edit `app/layout.tsx`
+## Deployment
 
-### Colors
-
-The Hollow Knight color palette is defined in `tailwind.config.ts`:
-
-```typescript
-colors: {
-  hollow: {
-    dark: "#0a0a0c",    // Deep black background
-    void: "#121418",    // Slightly lighter black
-    mist: "#3a4a5a",    // Muted blue-gray
-    light: "#c8d4e0",   // Light text
-    glow: "#e8f0f8",    // Bright white-blue
-    accent: "#7a9ab8",  // Blue accent
-  },
-}
+```bash
+npm run build
 ```
 
-## Deploy to Vercel
+Deploy to Vercel via GitHub integration or CLI:
 
-1. Push to GitHub
-2. Import to Vercel
-3. Deploy!
-
-No additional configuration needed.
-
-## License
-
-MIT
+```bash
+npx vercel --prod
+```
