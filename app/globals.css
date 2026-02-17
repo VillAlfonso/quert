@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a0c;
+    color: #c8d4e0;
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #0a0a0c;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3a4a5a;
+    border-radius: 9999px;
+  }
+}
+
+@layer components {
+  /* Main Title Styling */
+  .main-title {
+    font-family: "Cinzel", serif;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #e8f0f8;
+    animation: titleGlow 4s ease-in-out infinite;
+  }
+
+  @keyframes titleGlow {
+    0%,
+    100% {
+      text-shadow: 0 0 30px rgba(200, 212, 224, 0.5),
+        0 0 60px rgba(200, 212, 224, 0.3), 0 0 90px rgba(200, 212, 224, 0.1);
+    }
+    50% {
+      text-shadow: 0 0 40px rgba(200, 212, 224, 0.7),
+        0 0 80px rgba(200, 212, 224, 0.4), 0 0 120px rgba(200, 212, 224, 0.2);
+    }
+  }
+
+  /* Menu Items Styling (Hollow Knight style) */
+  .menu-item {
+    font-family: "Cinzel", serif;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #7a9ab8;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .menu-item::before {
+    content: "◇";
+    position: absolute;
+    left: -1.75rem;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.3s ease;
+    color: #e8f0f8;
+  }
+
+  .menu-item:hover {
+    color: #e8f0f8;
+    transform: translateX(0.5rem);
+    text-shadow: 0 0 20px rgba(232, 240, 248, 0.5);
+  }
+
+  .menu-item:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Light Rays */
+  .light-rays {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(
+      180deg,
+      rgba(232, 240, 248, 0.15) 0%,
+      rgba(200, 212, 224, 0.08) 30%,
+      rgba(200, 212, 224, 0.02) 60%,
+      transparent 100%
+    );
+    clip-path: polygon(40% 0%, 60% 0%, 80% 100%, 20% 100%);
+    filter: blur(20px);
+    animation: rayPulse 8s ease-in-out infinite;
+  }
+
+  .light-rays-2 {
+    left: 40%;
+    width: 40%;
+    opacity: 0.6;
+    clip-path: polygon(45% 0%, 55% 0%, 70% 100%, 30% 100%);
+    animation-delay: -2s;
+  }
+
+  .light-rays-3 {
+    left: 60%;
+    width: 35%;
+    opacity: 0.4;
+    clip-path: polygon(42% 0%, 58% 0%, 75% 100%, 25% 100%);
+    animation-delay: -4s;
+  }
+
+  @keyframes rayPulse {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Floating Particle */
+  .particle {
+    position: absolute;
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle,
+      rgba(232, 240, 248, 0.9) 0%,
+      rgba(200, 212, 224, 0.3) 50%,
+      transparent 100%
+    );
+  }
+
+  /* Project Cards */
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    transition: all 0.5s ease;
+    background: linear-gradient(
+      135deg,
+      rgba(26, 32, 40, 0.6) 0%,
+      rgba(18, 20, 24, 0.8) 100%
+    );
+    border: 1px solid rgba(122, 154, 184, 0.2);
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.125rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background: linear-gradient(90deg, transparent, #7a9ab8, transparent);
+  }
+
+  .project-card:hover {
+    transform: translateY(-0.25rem);
+    border-color: rgba(122, 154, 184, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(122, 154, 184, 0.1);
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  /* Skill Tags */
+  .skill-tag {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    background: rgba(122, 154, 184, 0.1);
+    border: 1px solid rgba(122, 154, 184, 0.3);
+    color: #7a9ab8;
+  }
+
+  .skill-tag:hover {
+    background: rgba(122, 154, 184, 0.2);
+    border-color: rgba(122, 154, 184, 0.5);
+    color: #c8d4e0;
+  }
+
+  /* CTA Button */
+  .cta-button {
+    font-family: "Cinzel", serif;
+    letter-spacing: 0.2em;
+    background: transparent;
+    border: 1px solid #7a9ab8;
+    color: #c8d4e0;
+    padding: 1rem 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .cta-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+    background: rgba(122, 154, 184, 0.2);
+  }
+
+  .cta-button:hover {
+    border-color: #c8d4e0;
+    box-shadow: 0 0 30px rgba(122, 154, 184, 0.3),
+      inset 0 0 30px rgba(122, 154, 184, 0.1);
+  }
+
+  .cta-button:hover::before {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  /* Section Content Background */
+  .section-content {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(10, 10, 12, 0.7) 10%,
+      rgba(10, 10, 12, 0.9) 30%,
+      rgba(10, 10, 12, 0.95) 50%,
+      rgba(10, 10, 12, 0.9) 70%,
+      rgba(10, 10, 12, 0.7) 90%,
+      transparent 100%
+    );
+  }
+
+  /* SVG Ornament Styling */
+  .svg-ornament {
+    fill: none;
+    stroke: #c8d4e0;
+    stroke-width: 1;
+  }
+
+  /* Navigation */
+  .nav-fixed {
+    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 12, 0.8);
+    border-bottom: 1px solid rgba(122, 154, 184, 0.1);
+  }
+}
+
+@layer utilities {
+  .duration-400 {
+    transition-duration: 400ms;
+  }
+
+  .duration-600 {
+    transition-duration: 600ms;
+  }
+}

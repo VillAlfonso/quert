@@ -1,0 +1,10 @@
+export { default as ParallaxBackground } from "./ParallaxBackground";
+export { default as FloatingParticles } from "./FloatingParticles";
+export { default as VineDecorations } from "./VineDecorations";
+export { default as Navbar } from "./Navbar";
+export { default as FadeIn } from "./FadeIn";
+export { default as ProjectCard } from "./ProjectCard";
+export { default as ProfileFrame } from "./ProfileFrame";
+export * from "./Ornament";
+export * from "./ProjectIcons";
+export * from "./Sections";
